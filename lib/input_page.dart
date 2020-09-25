@@ -25,27 +25,27 @@ class MyHomePage extends StatefulWidget {
 enum Gender { male, female }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Color maleCardColour = normalCardColour;
-  Color femaleCardColour = normalCardColour;
+  Gender selectedGender;
+  //  Color maleCardColour = normalCardColour;
+//  Color femaleCardColour = normalCardColour;
 
-  //Change the card colour when gender is selected.
-  void selectGender(Gender gender) {
-    if (gender == Gender.male) {
-      if (maleCardColour == pressedCardColour) {
-        maleCardColour = normalCardColour;
-      } else {
-        femaleCardColour = normalCardColour;
-        maleCardColour = pressedCardColour;
-      }
-    } else {
-      if (femaleCardColour == pressedCardColour) {
-        femaleCardColour = normalCardColour;
-      } else {
-        maleCardColour = normalCardColour;
-        femaleCardColour = pressedCardColour;
-      }
-    }
-  }
+//  void selectGender(Gender gender) {
+//    if (gender == Gender.male) {
+//      if (maleCardColour == pressedCardColour) {
+//        maleCardColour = normalCardColour;
+//      } else {
+//        femaleCardColour = normalCardColour;
+//        maleCardColour = pressedCardColour;
+//      }
+//    } else {
+//      if (femaleCardColour == pressedCardColour) {
+//        femaleCardColour = normalCardColour;
+//      } else {
+//        maleCardColour = normalCardColour;
+//        femaleCardColour = pressedCardColour;
+//      }
+//    }
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,11 +67,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          selectGender(Gender.male);
+                          selectedGender = Gender.male;
                         });
                       },
                       child: ReusableCard(
-                          colour: maleCardColour,
+                          colour: selectedGender == Gender.male
+                              ? pressedCardColour
+                              : normalCardColour,
                           cardChild: CardChild(
                               icon: FontAwesomeIcons.male, text: 'MALE')),
                     ),
@@ -80,11 +82,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        selectGender(Gender.female);
+                        selectedGender = Gender.female;
                       });
                     },
                     child: ReusableCard(
-                        colour: femaleCardColour,
+                        colour: selectedGender == Gender.female
+                            ? pressedCardColour
+                            : normalCardColour,
                         cardChild: CardChild(
                             icon: FontAwesomeIcons.female, text: 'FEMALE')),
                   )),
