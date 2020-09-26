@@ -7,6 +7,6 @@ const kHeadingStyle = TextStyle(
   fontSize: 20,
 );
 const kNormalCardColour = Color(0xFF101015);
-const kPressedCardColour = Colors.amber;
+const kPressedCardColour = Color(0xFFFFA000);
 const kNumberFontStyle = TextStyle(fontSize: 50, fontWeight: FontWeight.w900);
-const kLetterFontStyle = TextStyle(fontSize: 17, color: Color(0xFF8D8E98));
+const kLetterFontStyle = TextStyle(fontSize: 17, color: Colors.blueGrey);
