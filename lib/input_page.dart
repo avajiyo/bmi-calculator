@@ -3,15 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'card_child.dart';
-
-const cardColor = Color(0xFF101015);
-const headingStyle = TextStyle(
-  color: Colors.white,
-  fontWeight: FontWeight.normal,
-  fontSize: 20,
-);
-const normalCardColour = Color(0xFF101015);
-const pressedCardColour = Colors.amber;
+import 'constants.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -26,6 +18,7 @@ enum Gender { male, female }
 
 class _MyHomePageState extends State<MyHomePage> {
   Gender selectedGender;
+  int height = 180;
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +27,12 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Center(
             child: Text(
               'BMI CALCULATOR',
-              style: headingStyle,
+              style: kHeadingStyle,
             ),
           ),
         ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
               child: Row(
@@ -51,10 +45,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           });
                         },
                         colour: selectedGender == Gender.male
-                            ? pressedCardColour
-                            : normalCardColour,
+                            ? kPressedCardColour
+                            : kNormalCardColour,
                         cardChild: CardChild(
-                            icon: FontAwesomeIcons.male, text: 'MALE')),
+                            icon: FontAwesomeIcons.mars, text: 'MALE')),
                   ),
                   Expanded(
                     child: ReusableCard(
@@ -64,20 +58,46 @@ class _MyHomePageState extends State<MyHomePage> {
                           });
                         },
                         colour: selectedGender == Gender.female
-                            ? pressedCardColour
-                            : normalCardColour,
+                            ? kPressedCardColour
+                            : kNormalCardColour,
                         cardChild: CardChild(
-                            icon: FontAwesomeIcons.female, text: 'FEMALE')),
+                            icon: FontAwesomeIcons.venus, text: 'FEMALE')),
                   ),
                 ],
               ),
             ),
-            Expanded(child: ReusableCard(colour: cardColor)),
+            Expanded(
+                child: ReusableCard(
+              colour: kCardColor,
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("HEIGHT", style: kLetterFontStyle),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(height.toString(), style: kNumberFontStyle),
+                      Text(" cm", style: kLetterFontStyle),
+                    ],
+                    textBaseline: TextBaseline.alphabetic,
+                  ),
+                  Slider(
+                      value: height.toDouble(),
+                      min: 120,
+                      max: 220,
+                      onChanged: (double output) {
+                        setState(() {
+                          height = output.round();
+                        });
+                      }),
+                ],
+              ),
+            )),
             Expanded(
               child: Row(
                 children: [
-                  Expanded(child: ReusableCard(colour: cardColor)),
-                  Expanded(child: ReusableCard(colour: cardColor)),
+                  Expanded(child: ReusableCard(colour: kCardColor)),
+                  Expanded(child: ReusableCard(colour: kCardColor)),
                 ],
               ),
             ),
