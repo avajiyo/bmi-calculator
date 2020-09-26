@@ -19,6 +19,7 @@ enum Gender { male, female }
 class _MyHomePageState extends State<MyHomePage> {
   Gender selectedGender;
   int height = 180;
+  int weight = 55;
 
   @override
   Widget build(BuildContext context) {
@@ -96,12 +97,60 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               child: Row(
                 children: [
-                  Expanded(child: ReusableCard(colour: kCardColor)),
+                  Expanded(
+                      child: ReusableCard(
+                          cardChild: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text('WEIGHT', style: kLetterFontStyle),
+                              Text(weight.toString(), style: kNumberFontStyle),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  RoundButton(
+                                      icon: FontAwesomeIcons.minus,
+                                      onPressed: () {
+                                        setState(() {
+                                          weight--;
+                                        });
+                                      }),
+                                  Container(width: 10),
+                                  RoundButton(
+                                      icon: FontAwesomeIcons.plus,
+                                      onPressed: () {
+                                        setState(() {
+                                          weight++;
+                                        });
+                                      }),
+                                ],
+                              )
+                            ],
+                          ),
+                          colour: kCardColor)),
                   Expanded(child: ReusableCard(colour: kCardColor)),
                 ],
               ),
             ),
           ],
         ));
+  }
+}
+
+class RoundButton extends StatelessWidget {
+  RoundButton({@required this.icon, this.onPressed});
+  final IconData icon;
+  final Function onPressed;
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      child: Icon(icon),
+      onPressed: onPressed,
+      shape: CircleBorder(),
+      fillColor: Colors.white10,
+      constraints: BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0,
+      ),
+    );
   }
 }
