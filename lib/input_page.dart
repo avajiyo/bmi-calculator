@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'card_child.dart';
 import 'constants.dart';
+import 'Result_page.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -161,6 +162,33 @@ class _MyHomePageState extends State<MyHomePage> {
                   )),
                 ],
               ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ResultsPage();
+                    },
+                  ),
+                );
+              },
+              child: Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Calculate',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        letterSpacing: 1,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 25,
+                        color: Colors.black),
+                  ),
+                  color: kPressedCardColour,
+                  margin: EdgeInsets.only(top: 20.0),
+                  width: double.infinity,
+                  height: kBottomNavigationBarHeight),
             ),
           ],
         ));
