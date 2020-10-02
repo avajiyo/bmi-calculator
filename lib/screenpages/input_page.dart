@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'reusable_card.dart';
-import 'card_child.dart';
-import 'constants.dart';
-import 'Result_page.dart';
-import 'bottom_button.dart';
+import '../components/reusable_card.dart';
+import '../components/card_child.dart';
+import '../constants.dart';
+import 'package:bmi_calculator/components/buttons/bottom_button.dart';
+import '../components/buttons/bottom_button.dart';
+import 'package:bmi_calculator/screenpages/Result_page.dart';
+import 'package:bmi_calculator/components/buttons/round_button.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -173,24 +175,5 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ));
-  }
-}
-
-class RoundButton extends StatelessWidget {
-  RoundButton({@required this.icon, this.onPressed});
-  final IconData icon;
-  final Function onPressed;
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      onPressed: onPressed,
-      shape: CircleBorder(),
-      fillColor: Colors.white10,
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-    );
   }
 }

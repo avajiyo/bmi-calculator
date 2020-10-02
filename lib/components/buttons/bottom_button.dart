@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'input_page.dart';
-import 'constants.dart';
-import 'bottom_button.dart';
+import '../../screenpages/input_page.dart';
+import '../../constants.dart';
 
 class BottomButton extends StatelessWidget {
   BottomButton({@required this.buttonText, @required this.onTap});
