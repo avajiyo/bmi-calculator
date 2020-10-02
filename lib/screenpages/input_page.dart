@@ -8,6 +8,7 @@ import 'package:bmi_calculator/components/buttons/bottom_button.dart';
 import '../components/buttons/bottom_button.dart';
 import 'package:bmi_calculator/screenpages/Result_page.dart';
 import 'package:bmi_calculator/components/buttons/round_button.dart';
+import 'package:bmi_calculator/components/calculator_brain.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -141,6 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Text('AGE', style: kLetterFontStyle),
                         Text(age.toString(), style: kNumberFontStyle),
                         Row(
+                          textDirection: TextDirection.ltr,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RoundButton(
@@ -169,8 +171,16 @@ class _MyHomePageState extends State<MyHomePage> {
             BottomButton(
               buttonText: 'CALCULATE',
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ResultsPage()));
+                CalculatorBrain calc =
+                    CalculatorBrain(height: height, weight: weight);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultsPage(
+                              bMInumber: calc.getBMIResultInNumbers(),
+                              bMIwords: calc.getBMIResultInWords(),
+                              bMIdescription: calc.getBMIDescription(),
+                            )));
               },
             ),
           ],
