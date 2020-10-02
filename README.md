@@ -19,9 +19,9 @@ _bmi = weight / pow(height / 100, 2);
 1. Open up the app 'BMI CALCULATOR'.
 2. Select your Gender, Height, Weight, and Age.
 3. Press 'Calculate' - it is only an estimate and it doesn’t take into account other factors such as ethnicity and waist measurement.
-   • Underweight (<18.5) 
-   • Normal (18.5 - 24.9)
-   • Overweight (>25.0)
+- Underweight (<18.5) 
+- Normal (18.5 - 24.9)
+- Overweight (>25.0)
 
 ## Flutter Installation Guide
 
@@ -35,7 +35,7 @@ If you have a PC, you will need to:
 
 3. Install the Android Emulator
 
-[Windows Setup Guide] (https://flutter.dev/docs/get-started/install/windows)
+[Windows Setup Guide](https://flutter.dev/docs/get-started/install/windows)
 
 Or if you have a Mac, you need to:
 
@@ -47,4 +47,4 @@ Or if you have a Mac, you need to:
 
 4. Install Xcode and command-line tools
 
-[MacOS Setup Guide] (https://flutter.dev/docs/get-started/install/macos)
+[MacOS Setup Guide](https://flutter.dev/docs/get-started/install/macos)
