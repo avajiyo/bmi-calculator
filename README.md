@@ -6,7 +6,11 @@ This app was created with the help of [The App Brewery's Complete Flutter Develo
 ## What is BMI?
 
 Body Mass Index, or **BMI** is used to determine whether you are in a healthy weight range for your height.
-It is calculated as your weight (kg) divided by the square of your height (m).
+It is calculated using the formula:
+```
+_bmi = weight / pow(height / 100, 2);
+```
+... as your **weight** (kg) divided by the square of your **height** (m).
 
 ![bmicalculator](bmicalculator.gif)
 
