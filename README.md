@@ -12,7 +12,7 @@ _bmi = weight / pow(height / 100, 2);
 ```
 ... as your **weight** (kg) divided by the square of your **height** (m).
 
-![bmicalculator](bmicalculator.gif)
+![bmicalculator](bmicalculatorpreview.gif)
 
 ![rootfolder](bmicalculator.jpg)
 
