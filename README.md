@@ -3,6 +3,8 @@
 A simple BMI calculator app created using [Flutter](https://flutter.dev/) & [Android Studio](https://developer.android.com/studio).
 This app was created with the help of [The App Brewery's Complete Flutter Development Bootcamp by Dr. Angela Yu](https://www.appbrewery.co/)
 
+![bmicalculator](bmicalculatorpreview.gif)
+
 ## What is BMI?
 
 Body Mass Index, or **BMI** is used to determine whether you are in a healthy weight range for your height.
@@ -10,13 +12,9 @@ It is calculated using the formula:
 ```
 _bmi = weight / pow(height / 100, 2);
 ```
-... as your **weight** (kg) divided by the square of your **height** (m).
+Basically, it's your **weight** (kg) divided by the square of your **height** (m).
 
-![bmicalculator](bmicalculatorpreview.gif)
-
-![rootfolder](bmicalculator.jpg)
-
-## How To Use
+## How To Use The App
 
 1. Open up the app 'BMI CALCULATOR'.
 2. Select your Gender, Height, Weight, and Age.
@@ -28,7 +26,8 @@ _bmi = weight / pow(height / 100, 2);
 
 ## Flutter Installation Guide
 
-To edit the project, you need to set up Flutter for Android Studio.
+To edit the project, you need to set up **Flutter SDK** for Android Studio.
+![rootfolder](bmicalculator.jpg)
 
 If you have a PC, you will need to:
 
