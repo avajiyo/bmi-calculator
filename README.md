@@ -1,9 +1,10 @@
 # BMI Calculator
 
 A simple BMI calculator app created using [Flutter](https://flutter.dev/) & [Android Studio](https://developer.android.com/studio).
-This app was created with the help of [The App Brewery's Complete Flutter Development Bootcamp by Dr. Angela Yu](https://www.appbrewery.co/)
 
 ![bmicalculator](bmicalculatorpreview.gif)
+
+It was created with the help of [The App Brewery's Complete Flutter Development Bootcamp](https://www.appbrewery.co/)
 
 ## What is BMI?
 
