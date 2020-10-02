@@ -1,11 +1,11 @@
-# bmi_calculator in Flutter
+# BMI Calculator
 
-A simple BMI calculator app created with Flutter/Dart & Android Studio.
-This app was created with the help of [The App Brewery's Complete Flutter Development Bootcamp] by Dr. Angela Yu (https://www.appbrewery.co/)
+A simple BMI calculator app created using [Flutter](https://flutter.dev/) & [Android Studio](https://developer.android.com/studio).
+This app was created with the help of [The App Brewery's Complete Flutter Development Bootcamp by Dr. Angela Yu](https://www.appbrewery.co/)
 
 ## What is BMI?
 
-BMI stands for 'Body Mass Index'; it is used to determine whether you are in a healthy weight range for your height.
+Body Mass Index, or **BMI** is used to determine whether you are in a healthy weight range for your height.
 It is calculated as your weight (kg) divided by the square of your height (m).
 
 ![bmicalculator](bmicalculator.gif)
