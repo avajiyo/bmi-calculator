@@ -14,14 +14,17 @@ _bmi = weight / pow(height / 100, 2);
 
 ![bmicalculator](bmicalculator.gif)
 
+![rootfolder](bmicalculator.jpg)
+
 ## How To Use
 
 1. Open up the app 'BMI CALCULATOR'.
 2. Select your Gender, Height, Weight, and Age.
-3. Press 'Calculate' - it is only an estimate and it doesn’t take into account other factors such as ethnicity and waist measurement.
+3. Press 'Calculate'
 - Underweight (<18.5) 
 - Normal (18.5 - 24.9)
 - Overweight (>25.0)
+- (Note: This is only an estimate and it doesn’t take into account other factors such as ethnicity and waist measurement.)
 
 ## Flutter Installation Guide
 
